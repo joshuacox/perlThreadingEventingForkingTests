@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>The Lack Thereof: POE, Coro, AnyEvent, and Reflex</title><link rel="alternate" type="application/wiki" title="Edit this page" href="?action=edit;id=POE%2c_Coro%2c_AnyEvent%2c_and_Reflex" /><link type="text/css" rel="stylesheet" href="?action=browse;id=NoiseGen_PageCSS;raw=1;mime-type=text/css" /><meta name="robots" content="INDEX,FOLLOW" /><link rel="alternate" type="application/rss+xml" title="The Lack Thereof" href="?action=rss" /><link rel="alternate" type="application/rss+xml" title="The Lack Thereof: POE,_Coro,_AnyEvent,_and_Reflex" href="?action=rss;rcidonly=POE,_Coro,_AnyEvent,_and_Reflex" />
+
+<meta name="google-site-verification" content="CE-ErTqSeufQNCBPDYEHiRX9GhdwYyv2A-yGCGNVb7Q" />
+
+<script src="http://api.html5media.info/1.1.4/html5media.min.js"></script>
+
+<link
+  rel="alternate"
+  type="application/rss+xml" 
+  title="Blog feed for thelackthereof.org"
+  href="/blog.rss" />
+
+<link
+  rel="alternate"
+  type="application/rss+xml" 
+  title="Wiki feed for thelackthereof.org"
+  href="/wiki.rss" />
+
+<link
+  rel="alternate"
+  type="application/rss+xml" 
+  title="Project Update feed for thelackthereof.org"
+  href="/projects.rss" />
+
+<script src="/share/speller/spellChecker.js"></script>
+
+<!-- <script type="text/javascript" src="/js/mathjax/MathJax.js"></script> -->
+<script
+  type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- Lets try this out... -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-171033-1";
+urchinTracker();
+</script>
+
+<script>
+//  
+// openSpellChecker()
+//
+// this function is an example that illustrates the various ways you can invoke
+// the the Speller Pages spell-checking process
+//
+function openSpellChecker() {
+    
+    var speller = new spellChecker();
+    speller.spellCheckAll();
+
+}
+</script>
+
+
+<script type="text/Javascript">
+function togglecomments (id) {
+   var elem = document.getElementById(id);
+   if (elem.className=="commentshown") {
+      elem.className="commenthidden";
+   }
+   else {
+      elem.className="commentshown";
+   }
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body class=""><div id="shadow-holder">
+<!-- <div class=tlt-title-shadow href="/">THE LACK THEREOF</div> -->
+<span class=tlt-subtitle>Musings of a Software Inventor, or,</span>
+<a class=tlt-title href="/">THE LACK THEREOF</a>
+</div>
+<div class="header"><a class="logo" href="/Home"><img class="logo" src="/pics/tao_vectorized2.png" alt="[Home]" /></a><h1><a title="Click to search for references to this page" rel="nofollow" href="?search=%22POE%2c+Coro%2c+AnyEvent%2c+and+Reflex%22">POE, Coro, AnyEvent, and Reflex</a></h1></div><div class="wrapper"><div class="wrapper"><div class="sidebar"><h3>Navigation</h3><ul><li><a class="local" href="/Home">Home</a></li><li><a class="local" href="/Projects">Projects</a></li><li><a class="local" href="/Music">Music</a></li><li><a class="local" href="/Docs">Docs</a></li></ul><h3>Feeds</h3><ul><li><img class="url http" src="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" alt="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" /> <a class="url http outside" href="http://thelackthereof.org/blog.rss">Blog RSS Feed</a></li><li><img class="url http" src="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" alt="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" /> <a class="url http outside" href="http://thelackthereof.org/projects.rss">Project Code RSS Feed</a></li><li><img class="url http" src="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" alt="http://thelackthereof.org/pics/16px-Feed-icon.svg.png" /> <a class="url http outside" href="http://thelackthereof.org/wiki.rss">Site RSS Feed</a></li></ul><h3>Recent Entries</h3><ul class="headlines"><li><a class="headline local" href="/TLT/2013.12.26/Overtone_Adventures_4">Overtone Adventures 4</a></li><li><a class="headline local" href="/TLT/2013.12.24/Overtone_Adventures_3">Overtone Adventures 3</a></li><li><a class="headline local" href="/TLT/2013.12.23/Overtone_Adventures_2">Overtone Adventures 2</a></li><li><a class="headline local" href="/TLT/2013.12.22/Overtone_Adventures_1">Overtone Adventures 1</a></li><li><a class="headline local" href="/TLT/2013.02.06/DC-Baltimore_Perl_Workshop_2013">DC-Baltimore Perl Workshop 2013</a></li><li><a class="headline local" href="/TLT/2012.09.09/The_Flooding_of_Bath">The Flooding of Bath</a></li><li><a class="headline local" href="/TLT/2012.08.28/Code_Comments,_Yo">Code Comments, Yo</a></li><li><a class="headline local" href="/TLT/2012.08.20/First_Day_in_CS440">First Day in CS440</a></li><li><a class="headline local" href="/TLT/2012.07.10/Hi_Eliza">Hi Eliza</a></li><li><a class="headline local" href="/TLT/2011.10.11/PPW_2011_Wrap-Up">PPW 2011 Wrap-Up</a></li><li><a href="/?search=^TLT%20-" class="local">... all entries</a></li></ul><h3>Recent Code</h3><div class="rss"><p><strong>2013-11-09</strong></p><ul><li><span class="time">17:40 UTC </span> <a title="2013-11-09 17:40:05 -0500" href="http://thelackthereof.org/projects/school/csu/cs475">school-csu-cs475: commit a68a52e9178768db085e66493de1a58f0d9a2c20</a><span class="dash"> &#8211; </span><strong class="description">Initial MPI add</strong></li><li><span class="time">17:39 UTC </span> <a title="2013-11-09 17:39:36 -0500" href="http://thelackthereof.org/projects/school/csu/cs475">school-csu-cs475: Update lab3</a></li></ul><p><strong>2013-11-06</strong></p><ul><li><span class="time">21:03 UTC </span> <a title="2013-11-06 21:03:41 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: commit e425d5c29f85c941016e803202ec90ae848bbb8f</a><span class="dash"> &#8211; </span><strong class="description">Don't bother to re-borrow FFI::Raw types if it's already been done.</strong></li><li><span class="time">10:01 UTC </span> <a title="2013-11-06 10:01:51 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Allow loading libraries by short name, building a search list of libraries, and make them stick by package rather than scope.</a></li></ul><p><strong>2013-11-03</strong></p><ul><li><span class="time">19:16 UTC </span> <a title="2013-11-03 19:16:39 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Flesh out the ffi_struct statement, base class, and tests.</a></li><li><span class="time">00:56 UTC </span> <a title="2013-11-03 00:56:20 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Begin struct / memptr wrapper, define tests first</a></li><li><span class="time">00:55 UTC </span> <a title="2013-11-03 00:55:18 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Remove junk, add basic tests for FFI::Sweet</a></li></ul><p><strong>2013-10-30</strong></p><ul><li><span class="time">17:40 UTC </span> <a title="2013-10-30 17:40:36 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Pull in and rewrite examples from FFI::Raw</a></li><li><span class="time">14:58 UTC </span> <a title="2013-10-30 14:58:29 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Fork from work in Audio::PortAudio::FFI to create a new dist</a></li><li><span class="time">12:06 UTC </span> <a title="2013-10-30 12:06:00 -0500" href="http://thelackthereof.org/projects/perl/FFI-Sweet">perl-FFI-Sweet: Begin FFI::Raw::Sweet, rewrite the portaudio stuff to use it for testing</a></li></ul></div><h2>Recent Edits</h2><div class="SimpleRc"><p><strong>2014-04-27</strong></p><ul><li><a class="local" href="/Music">Music</a></li></ul><p><strong>2014-04-26</strong></p><ul><li><a class="local" href="/Frog_Prince">Frog Prince</a></li></ul><p><strong>2014-04-22</strong></p><ul><li><a class="local" href="/It_Takes_All_Sorts">It Takes All Sorts</a></li></ul></div><a class="local" href="/Changes">... more changes</a><p><h3><a class="url http outside" href="http://thelackthereof.org/">Blog Calendar</a></h3><div class="cal"><pre>      May 2014        
+Su Mo Tu We Th Fr Sa  
+             <a class="wanted" href="/TLT_-_2014.05.01">1</a> _ _<a class="today" href="/TLT_-_2014.05.02">2</a>  <a class="wanted" href="/TLT_-_2014.05.03">3</a>  
+ <a class="wanted" href="/TLT_-_2014.05.04">4</a>  <a class="wanted" href="/TLT_-_2014.05.05">5</a>  <a class="wanted" href="/TLT_-_2014.05.06">6</a>  <a class="wanted" href="/TLT_-_2014.05.07">7</a>  <a class="wanted" href="/TLT_-_2014.05.08">8</a>  <a class="wanted" href="/TLT_-_2014.05.09">9</a><a class="wanted" href="/TLT_-_2014.05.10"> 10</a>  
+<a class="wanted" href="/TLT_-_2014.05.11">11</a><a class="wanted" href="/TLT_-_2014.05.12"> 12</a><a class="wanted" href="/TLT_-_2014.05.13"> 13</a><a class="wanted" href="/TLT_-_2014.05.14"> 14</a><a class="wanted" href="/TLT_-_2014.05.15"> 15</a><a class="wanted" href="/TLT_-_2014.05.16"> 16</a><a class="wanted" href="/TLT_-_2014.05.17"> 17</a>  
+<a class="wanted" href="/TLT_-_2014.05.18">18</a><a class="wanted" href="/TLT_-_2014.05.19"> 19</a><a class="wanted" href="/TLT_-_2014.05.20"> 20</a><a class="wanted" href="/TLT_-_2014.05.21"> 21</a><a class="wanted" href="/TLT_-_2014.05.22"> 22</a><a class="wanted" href="/TLT_-_2014.05.23"> 23</a><a class="wanted" href="/TLT_-_2014.05.24"> 24</a>  
+<a class="wanted" href="/TLT_-_2014.05.25">25</a><a class="wanted" href="/TLT_-_2014.05.26"> 26</a><a class="wanted" href="/TLT_-_2014.05.27"> 27</a><a class="wanted" href="/TLT_-_2014.05.28"> 28</a><a class="wanted" href="/TLT_-_2014.05.29"> 29</a><a class="wanted" href="/TLT_-_2014.05.30"> 30</a><a class="wanted" href="/TLT_-_2014.05.31"> 31</a>  
+                      
+</pre></div></p></div><div class="content browse"><p>For <a class="url http outside" href="http://www.yapc2011.us/yn2011/">YAPC::NA 2011</a> I gave a talk, <a class="url http outside" href="http://www.yapc2011.us/yn2011/talk/3334">"POE, Reflex, Coro, AnyEvent, .... What and Why"</a>. Here are the [slides I used for the talk], but they are mostly just large words and there was a lot of talking. The video will appear soon I hope (if it worked), but a written form might be nice -- so here it is!</p><hr /><h2>Introduction</h2><p>I hope to give you a very high-level introduction to these four technologies, and a few examples to illustrate their philosophies and usage.</p><p>One of the very simple examples I use is called 'sleep sort'. This is a fun little algorithm first introduced by the unique minds of 4chan. The game is to write a simple command line program that takes a list of numbers as arguments, and then print them out in sorted order. The fun bit is how this is done -- for each number argument X they fork and then sleep for X seconds before printing out X. One way to put it is that this is a sort that utilizes time instead of space. Quite bizarre and amusing. Here's an example of this using fork that the reset of our samples resembles; note that it sits there forever and will require a ^C to terminate.</p><p><code>use 5.12.0;
+foreach my $t (@ARGV) {
+  if(!fork()) {
+    sleep $t;
+    say $t;
+    exit;
+  }
+}
+sleep while 1; # Loop forever
+</code></p><p>The examples I use are a bit different because they don't actually fork or use other processes. Instead they work with whatever their concurrency model is to watch for a timeout within the single running process. You'd do similar things with each tool to instead wait for a filehandle to be readable or some data to be ready on a socket.</p><p>I'll now go through the technologies, following the order in which they appeared on CPAN.</p><h2>POE</h2><p>"portable multitasking and networking framework for any event loop"</p><p>First hitting CPAN in 1998, POE was actually started a few years before that by Rocco, who says he initially created it to help write games. At least partly due to its age, POE has a large community and many useful tools on CPAN. I ran into POE when wanting to create an IRC bot, for example.</p><p><code># Sleep sort using POE
+use 5.12.0;
+use POE;
+
+POE::Session-&gt;create(
+    inline_states =&gt; {
+        _start =&gt; sub {
+            $_[KERNEL]-&gt;delay_add(ding =&gt; $_, $_)
+                foreach @ARGV;
+        },
+        ding =&gt; sub {
+            print "$_[ARG0]\n";
+        }
+    }
+);
+
+POE::Kernel-&gt;run();
+</code></p><h2>Coro</h2><p>"the only real threads in perl"</p><p>Coro was introduced back in 2001. Coro does some deep magic not only in the perl core but in the C stack itself, saving off the important parts of the current running state into a Coro::State object that represents a single thread of execution. This allows for cooperative threading with very flexible control over shared variable scope. You can think of it as threads, you can think of it as continuations/coroutines, and you can think of it a way of implementing the inversion-of-control pattern.</p><p>It was insane when introduced in 2001, just as it is insane now, with one very very strong caveat -- it works. Ten years and several major perl revisions later, it friggin WORKS and is very good at what it does. But it's deep magic comes at a price -- the perl debugger and some profiling tools (such as NYTProf) do not deal well with Coro. Maybe someday these tools will adapt to run cleanly under Coro, or Coro will adapt to run under them, or maybe some of the perl core will be adapted to make Coro less invasive. Even with this caveat, I've been happily using Coro for years.</p><p><code># Sleep sort using Coro
+use 5.12.0;
+use Coro;
+use Coro::Timer qw(sleep);
+
+for my $i (@ARGV) {
+    async {
+        sleep $i;
+        print "&gt; $i\n"
+    }
+}
+</code></p><h2>AnyEvent</h2><p>"the DBI of event loop programming"</p><p>Introduced in 2005, AnyEvent provides a simple model of event management centering around callbacks.</p><p><code># Sleep sort using AnyEvent
+use 5.12.0;
+use EV;
+use AE;
+my @w;
+for my $i (@ARGV) {
+    push @w, AE::timer $i, 0,
+        sub { print "&gt; $i\n" }
+}
+EV::loop
+</code></p><h2>Reflex</h2><p>This is the newcomer to the scene, currently existing as a layer on top of POE. Rocco has tried over the years with several projects to rise above some of the nitty gritty of POE into the realm of concurrent and reactive objects, and it seems that the approach in Reflex is achieving his goals at last.</p><p>One thing that strikes me boldly about Reflex: though it is implemented on top of POE, it could just as easily be on top of AnyEvent and change (almost) nothing about the API. I think this fact strongly illustrates the level of abstraction not only of Reflex, but of POE and AnyEvent.</p><p><code># Sleep sort using Reflex (in callback mode)
+use 5.12.0;
+use Reflex::Timeout;
+my @timeouts;
+foreach my $num (@ARGV) { 
+    push @timeouts, Reflex::Timeout-&gt;new( delay =&gt; $num, on_done =&gt; sub { 
+        print "$num\n"
+    })
+}
+Reflex-&gt;run_all();
+</code></p><h2>The Monster</h2><p>I claimed at some point that these technologies could work together. Well... Let's Do This!</p><p>Here is sleep sort using POE, Coro, AnyEvent, and Reflex. It is a simple example, and I wouldn't be surprised if you have to do more work if you want to do more IO-like tasks rather than simple timers. It uses AnyEvent::Impl::POE, which allows POE to be the actual event loop and AnyEvent to tap in, running it's own pending events when POE lets it. Reflex sits on top of the POE event loop. Coro notices AnyEvent is loaded, so it loads Coro::AnyEvent and switches coroutines when AnyEvent lets it. I think.<br /><code># Sleep sort using POE, Coro, AnyEvent, and Reflex. srsly.
+use 5.12.0;
+use POE;
+use AnyEvent;
+use Coro;
+use AnyEvent::Impl::POE;
+
+say "First let's queue our AnyEvent stuff";
+my @w;
+for my $i (@ARGV) {
+    push @w, AE::timer $i, 0,
+        sub { print "AnyEvent: $i\n" }
+}
+
+say "Now POE";
+POE::Session-&gt;create(
+    inline_states =&gt; {
+        _start =&gt; sub {
+            $_[KERNEL]-&gt;delay_add(ding =&gt; $_, $_)
+                foreach @ARGV;
+        },
+        ding =&gt; sub {
+            print "POE: $_[ARG0]\n";
+        }
+    }
+);
+
+say "Then Coro";
+use Coro::Timer qw(sleep);
+for my $i (@ARGV) {
+    async {
+        sleep $i;
+        print "Coro: $i\n"
+    }
+}
+
+say "and REFLEX....";
+use Reflex::Timeout;
+my @timeouts;
+foreach my $num (@ARGV) { 
+    push @timeouts, Reflex::Timeout-&gt;new( delay =&gt; $num, on_done =&gt; sub { 
+        print "Reflex: $num\n"
+    })
+}
+
+say "We'll let POE::Kernel do the driving... and GO!\n\n";
+POE::Kernel-&gt;run();
+</code></p></div><div class="wrapper close"></div></div><div class="wrapper close"></div></div><div class="footer"><hr /><span class="gotobar bar"><a class="local" href="/Projects">Projects</a> <a class="local" href="/Docs">Docs</a> <a class="local" href="/Links">Links</a> <a class="local" href="/Changes">Changes</a> </span><span class="edit bar"><br /> <a class="comment local" href="/Comments_on_POE%2c_Coro%2c_AnyEvent%2c_and_Reflex">View 0 Comments on POE, Coro, AnyEvent, and Reflex</a> <a class="edit" accesskey="e" title="Click to edit this page" rel="nofollow" href="?action=edit;id=POE%2c_Coro%2c_AnyEvent%2c_and_Reflex">Edit this page</a> <a class="history" rel="nofollow" href="?action=history;id=POE%2c_Coro%2c_AnyEvent%2c_and_Reflex">View other revisions</a> <a class="admin" rel="nofollow" href="?action=admin;id=POE%2c_Coro%2c_AnyEvent%2c_and_Reflex">Administration</a></span><span class="time"><br /> Last edited 2011-07-03 20:01 UTC by <a class="author" title="from c-98-204-81-204.hsd1.dc.comcast.net" href="/awwaiid">awwaiid</a> <a class="diff" rel="nofollow" href="?action=browse;diff=2;id=POE%2c_Coro%2c_AnyEvent%2c_and_Reflex">(diff)</a></span><form method="get" action="/" enctype="multipart/form-data" class="search">
+<p><label for="search">Search:</label> <input type="text" name="search"  size="20" accesskey="f" id="search" /> <input type="submit" name="dosearch" value="Go!" /></p></form><a href="mailto:awwaiid@thelackthereof.org">awwaiid@thelackthereof.org</a></div>
+</body>
+</html>
